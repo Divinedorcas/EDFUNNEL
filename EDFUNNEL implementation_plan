@@ -1,0 +1,147 @@
+# "Reclaim Your Confidence" Sales Funnel Implementation Plan
+
+This document outlines the architecture, design tokens, and components for building the 2-Day Men's Performance Reset sales funnel.
+
+## User Review Required
+
+- **Images & Illustrations**: Placeholders will be used for images (e.g., Hero image, Why it Matters illustration). If you have specific assets, they can be swapped in later, or we can use generated imagery.
+- **Form Submission**: The registration form will use React Hook Form for validation, but we will mock the submission process (e.g., logging to console) since no backend is specified. Is this acceptable?
+- **WhatsApp Button Number**: The floating WhatsApp button will need a real phone number for the link to work. We will use a placeholder number for now.
+
+## Open Questions
+
+- **Countdown Timer Target**: Is there a specific date/time the countdown timer should target, or should we use a dynamic "24 hours from load" timer for demonstration?
+- **Routing**: This is specified as a "single-page sales funnel". Will we use anchor links (e.g., scrolling down the page) for the navigation (About, Program, Bonuses, FAQ), or React Router for separate pages? The plan assumes a single scrolling page with smooth scroll behavior.
+
+## Proposed Changes
+
+### Setup and Configuration
+
+We will initialize a new React project using Vite and configure our tools.
+
+#### [NEW] `project/package.json`
+- Initialize Vite React project (JS only).
+- Add dependencies: `tailwindcss`, `framer-motion`, `react-icons`, `react-hook-form`, `clsx`, `tailwind-merge`.
+
+#### [NEW] `project/tailwind.config.js`
+- Configure color palette:
+  - `primary`: Navy Blue (`#1E3A5F`)
+  - `accent`: Forest Green (`#2E7D32`)
+  - `background`: Light Gray (`#F4F4F4`)
+- Configure font family: `Inter`.
+
+#### [NEW] `project/src/index.css`
+- Tailwind directives and base styles.
+
+---
+
+### Core UI Components (Reusable)
+
+#### [NEW] `project/src/components/ui/Button.jsx`
+- Reusable button with variants (primary, secondary, outline) and animations on hover/tap using Framer Motion.
+
+#### [NEW] `project/src/components/ui/SectionTitle.jsx`
+- Consistent section headers with fading animations.
+
+#### [NEW] `project/src/components/ui/FeatureCard.jsx`
+- Icon cards for the "Problem" and "Who Should Attend" sections.
+
+#### [NEW] `project/src/components/ui/Timeline.jsx`
+- Vertical timeline component for "Program Overview" and "Registration Process".
+
+#### [NEW] `project/src/components/ui/BonusCard.jsx`
+- Premium-styled card for the "Everything You Receive" section.
+
+#### [NEW] `project/src/components/ui/PricingCard.jsx`
+- Dark premium card emphasizing the price and features.
+
+#### [NEW] `project/src/components/ui/Accordion.jsx`
+- Collapsible accordion for the FAQ section.
+
+#### [NEW] `project/src/components/ui/TestimonialCard.jsx`
+- Card showing photo, name, rating, and quote.
+
+---
+
+### Layout Components
+
+#### [NEW] `project/src/components/layout/Navbar.jsx`
+- Sticky top navigation, logo, desktop links, and CTA button.
+
+#### [NEW] `project/src/components/layout/Footer.jsx`
+- Simple footer with requested links and medical disclaimer.
+
+---
+
+### Page Sections
+
+#### [NEW] `project/src/components/sections/Hero.jsx`
+- Headlines, CTAs, Hero image placeholder, badges, and fade-up animations.
+
+#### [NEW] `project/src/components/sections/ProblemSection.jsx`
+- "Does Any of This Sound Familiar?" section with staggered `FeatureCard`s.
+
+#### [NEW] `project/src/components/sections/WhyItMatters.jsx`
+- Split layout explaining conditions associated with ED, with a medical disclaimer.
+
+#### [NEW] `project/src/components/sections/ProgramOverview.jsx`
+- Day 1 and Day 2 breakdown using the `Timeline` component.
+
+#### [NEW] `project/src/components/sections/Bonuses.jsx`
+- Responsive grid of `BonusCard`s.
+
+#### [NEW] `project/src/components/sections/WhoShouldAttend.jsx`
+- Target audience cards.
+
+#### [NEW] `project/src/components/sections/Pricing.jsx`
+- Dark background section featuring the `PricingCard`.
+
+#### [NEW] `project/src/components/sections/RegistrationProcess.jsx`
+- 4-step `Timeline` showing how to register.
+
+#### [NEW] `project/src/components/sections/FAQ.jsx`
+- Frequently asked questions using the `Accordion`.
+
+#### [NEW] `project/src/components/sections/Testimonials.jsx`
+- Grid of placeholder `TestimonialCard`s.
+
+#### [NEW] `project/src/components/sections/FinalCTA.jsx`
+- Emotional close with a large CTA and scarcity text.
+
+---
+
+### Forms and Widgets
+
+#### [NEW] `project/src/components/forms/RegistrationForm.jsx`
+- Form using `react-hook-form` with validation (Name, Email, Phone, Age, State, Occupation, ED Experience).
+
+#### [NEW] `project/src/components/widgets/CountdownTimer.jsx`
+- Visual countdown timer showing when registration closes.
+
+#### [NEW] `project/src/components/widgets/FloatingWhatsApp.jsx`
+- Fixed bottom-right icon linking to WhatsApp.
+
+#### [NEW] `project/src/components/widgets/StickyMobileCTA.jsx`
+- Fixed bottom bar visible only on mobile screens with "Reserve Seat" CTA.
+
+---
+
+### Main Application Assembly
+
+#### [MODIFY] `project/src/App.jsx`
+- Assemble all sections in order.
+- Implement lazy loading for sections below the fold if necessary.
+- Wrap application with a smooth-scrolling container.
+
+## Verification Plan
+
+### Automated Tests
+- No automated tests are planned as they were not explicitly requested, but ESLint will be used to ensure code quality.
+
+### Manual Verification
+- We will start the Vite development server (`npm run dev`) and verify:
+  1. Responsive layout across desktop, tablet, and mobile breakpoints.
+  2. Framer Motion animations trigger correctly on scroll.
+  3. The form validations work as expected (e.g., required fields, email format).
+  4. The color palette (Navy Blue, Forest Green) is applied accurately.
+  5. The sticky elements (Navbar, Mobile CTA, WhatsApp button) behave correctly.
