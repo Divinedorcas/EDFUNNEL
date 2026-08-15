@@ -8,19 +8,29 @@ export default function Pricing() {
 
   const bonusItems = [
     {
-      name: "The Root Cause Blueprint Ebook",
-      price: "₦9,000",
-      link: "https://selar.com/rootcauseblueprint",
+      name: "The ED Root Cause Blueprint Ebook",
+      price: "₦5,000",
+      link: "https://selar.com/02165413l6",
     },
     {
       name: "The Testosterone Reset Ebook",
       price: "₦15,000",
-      link: "https://selar.com/testosteronereset",
+      link: "https://selar.com/735r20z622",
+    },
+    {
+      name: "Stress, Cortisol & Your Manhood (Guide)",
+      price: "₦5,000",
+      link: "https://selar.com/77b010j178",
+    },
+    {
+      name: "Reignite Her: Intimacy Restoration Conversation Ebook for Couples",
+      price: "₦10,000",
+      link: "https://selar.com/o238q0p679",
     },
     {
       name: "The Strong Man Morning Routine Audio",
       price: "₦5,000",
-      link: "https://selar.com/strongmanmorning",
+
     },
     {
       name: "Full Session Recording",
@@ -32,21 +42,13 @@ export default function Pricing() {
       price: "₦15,000",
 
     },
-    {
-      name: "Reignite Her: Intimacy Restoration Conversation Ebook for Couples",
-      price: "₦25,000",
-      link: "https://selar.com/reigniteher",
-    },
+
     {
       name: "Private Follow-Up Sessions",
       price: "₦15,000",
 
     },
-    {
-      name: "Stress, Cortisol & Your Manhood (Guide)",
-      price: "₦9,000",
-      link: "https://selar.com/stresscortisol",
-    },
+
   ];
 
   return (
