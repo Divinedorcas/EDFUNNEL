@@ -3,8 +3,8 @@ import TestimonialCard from '../ui/TestimonialCard';
 
 import testimony1 from '../../assets/testimony1.png';
 import testimony2 from '../../assets/testimony2.png';
-import testimony3 from '../../assets/testimony2.png';
-import testimony4 from '../../assets/testimony2.png';
+import testimony3 from '../../assets/testimony3.png';
+import testimony4 from '../../assets/testimony4.png';
 
 export default function Testimonials() {
   const testimonials = [
