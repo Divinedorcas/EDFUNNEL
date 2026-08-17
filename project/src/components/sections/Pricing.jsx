@@ -14,7 +14,7 @@ export default function Pricing() {
     },
     {
       name: "The Testosterone Reset Ebook",
-      price: "₦15,000",
+      price: "₦10,000",
       link: "https://selar.com/735r20z622",
     },
     {
@@ -48,6 +48,11 @@ export default function Pricing() {
       price: "₦15,000",
 
     },
+    {
+      name: "This program",
+      price: "₦25,000",
+
+    },
 
   ];
 
@@ -65,7 +70,7 @@ export default function Pricing() {
 
         <PricingCard
           items={bonusItems}
-          totalValue="₦99,000"
+          totalValue="₦95,000"
           coachingPrice="₦15,000"
           onCtaClick={scrollToRegister}
         />
