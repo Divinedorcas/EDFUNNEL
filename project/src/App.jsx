@@ -18,9 +18,8 @@ import FloatingWhatsApp from './components/widgets/FloatingWhatsApp';
 import StickyMobileCTA from './components/widgets/StickyMobileCTA';
 
 function App() {
-  // Set target date for countdown (e.g., 2 days from now)
-  const targetDate = new Date();
-  targetDate.setDate(targetDate.getDate() + 2);
+  // Registration closes: August 28, 2026 at 7:00 PM
+  const targetDate = new Date('2026-08-28T19:00:00');
 
   return (
     <div className="font-sans min-h-screen flex flex-col bg-background">

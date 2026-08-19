@@ -13,10 +13,10 @@ export default function Hero() {
   };
 
   const badges = [
-    { icon: FaVideo, text: 'Live Coaching' },
+
     { icon: FaYoutube, text: 'YouTube Live' },
     { icon: FaCheckCircle, text: '2 Days' },
-    { icon: FaCheckCircle, text: '₦15,000' },
+
   ];
 
   return (
